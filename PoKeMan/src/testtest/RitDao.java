@@ -69,7 +69,7 @@ public abstract class RitDao {
 		EntityManager em = emf.createEntityManager();
 		EntityTransaction t = em.getTransaction();
 		t.begin();
-		List<highscore> ritten = em.createQuery("from highscore", highscore.class).getResultList();
+		List<highscore> ritten = em.createQuery("from highscore order by start ASC", highscore.class).getResultList();
 		t.commit();
 		em.close();
 		return ritten;

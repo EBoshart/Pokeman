@@ -9,23 +9,21 @@
 <title>Rittenregistratie</title>
 </head>
 <body>
-	<ul>
+<a href=http://10.2.22.55/ServiceDemo/game.zip>download game Toon</a><br>
+
+<a href=/PoKeMan.zip>download game Erwin</a>
+	<ol type=1>
+	
 		<c:forEach items="${ritten}" var="rit">
 			<li>
-				Gamescore plaats: ${rit.id}: <a href="<c:url value="/rit/${rit.id}" />"> ${rit.naam}</a>, 
+		
+				Gamescore plaats: ${rit.id}: <a href="<c:url value="/rit/${rit.id}" />"> ${rit.naam} </a>score= ${rit.start}
 				<!--  <a href="<c:url value="/delete/${rit.id}" />">verwijder</a> -->
 			</li>
 		</c:forEach>
-	</ul>
+	</ol>
 	
 	<!-- Let op! We MOETEN hier form:form gebruiken in plaats van een normale HTML form -->
-	<%-- <form:form method="post">
-		<p>
-			Naam: <input type="text" name="naam"><br>
-			Score: <input type="text" name="start"><br>
-			
-			<input type="submit">
-		</p>
-	</form:form> --%>
+
 </body>
 </html>
