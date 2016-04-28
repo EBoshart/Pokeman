@@ -5,24 +5,31 @@
 <!doctype html>
 <html>
 <head>
+<link rel=icon type=image/ico href=resources/favicon.ico>
 
-<title>Rittenregistratie</title>
+<title>PoKeMan</title>
 </head>
 <body>
-<a href=http://10.2.22.55/ServiceDemo/game.zip>download game Toon</a><br>
+<!-- <a href=http://10.2.22.55/ServiceDemo/game.zip>download game Toon</a><br> -->
 
-<a href=/PoKeMan.zip>download game Erwin</a>
-	<ol type=1>
-	
-		<c:forEach items="${ritten}" var="rit">
-			<li>
+<a href=resources/PoKeMan.zip>download game version 1.337 </a>
+<%-- <center> --%>
+<table style=font-size:50px align=center>
+ <col width="500">
+		<tr> <td>   <strong style="font-size: 100px;"><b>Name</b></strong><br /></td>
+    <td><strong style="font-size: 100px;"><b>Score</b></strong></td> 
+    </tr>
 		
-				Gamescore plaats: ${rit.id}: <a href="<c:url value="/rit/${rit.id}" />"> ${rit.naam} </a>score= ${rit.start}
-				<!--  <a href="<c:url value="/delete/${rit.id}" />">verwijder</a> -->
-			</li>
-		</c:forEach>
-	</ol>
+		<c:forEach items="${scores}" var="rit">
+
+		
+				<tr><td>  <a href="<c:url value="/rit/${rit.id}" />"> ${rit.naam} </a> </td><td> ${rit.start} </td></tr>
+			
 	
+		</c:forEach>
+	
+	</table>
+<%-- 	</center> --%>
 	<!-- Let op! We MOETEN hier form:form gebruiken in plaats van een normale HTML form -->
 
 </body>
